@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Nav from './components/Nav'
+import Exchange from './components/Exchange'
+import Dao from "./components/Dao"
+import Staking from "./components/Staking"
+import YieldFarming from "./components/YieldFarming"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Nav> 
+        <Routes>
+          <Route path="/" element={<Exchange />} />
+          <Route path="/dao" element={<Dao />} />
+          <Route path="/liquidity" element={<Staking />} />
+          <Route path="/yieldfarming" element={<YieldFarming />} />
+        </Routes>
+      </Nav> 
+    </BrowserRouter> 
   );
 }
 

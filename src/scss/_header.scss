@@ -1,0 +1,163 @@
+@mixin center-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@import 'breakpoints';
+
+.header{
+    @include xs{
+        width: 100%;
+        background-color: rgb(37, 40, 49);;
+        border-top-left-radius: 0px;
+    }
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: fixed;
+    z-index: 1100;
+    top: 0px;
+    left: auto;
+    right: 0px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(37, 40, 49);
+    width: calc(100% - 236px);
+    border-style: solid;
+    border-width: 0px 0px 1px;
+    border-color: rgb(69, 72, 81);
+    box-shadow: none;
+    background-image: unset;
+    border-top-left-radius: 24px;
+    &__wrapper{
+        @include xs{
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            justify-content: space-between;
+        }
+        &__header{
+            &__hamWrapper{
+                height: 38px;
+                width: 48px;
+                @include center-items();
+                &__icon{
+                    &__dropdown{
+                        & svg{
+                            fill: rgba(255, 255, 255, 0.8);
+                        }
+                        @include center-items();
+                    }
+                    &__grid{
+                        & svg{
+                            height: 28px;
+                            width: 28px;
+                            fill: rgba(255, 255, 255, 0.8);
+                        }
+                        @include xs{
+                            @include center-items();
+                            height: 100%;
+                        }
+                    }
+                    @include xs{
+                        height: 100%;
+                        @include center-items();
+                        gap: 0.4rem;
+                    }
+                }
+            }
+            @include xs{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.7rem;
+            }
+            display: none;
+        }
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 68px;
+        padding: 16px 40px 16px 40px;
+        box-shadow: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        &__title{
+            @include xs{
+                display: none;
+            }
+            display: flex;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+        }
+        &__right{
+            @include center-items();
+            @include xs{
+                gap: 0.2rem;
+            }
+            gap: 1.2rem;
+            &__bridge{
+                @include center-items();
+                &__wrapped{
+                    &__more{
+                        @include xs{
+                            display: none;
+                        }
+                    }
+                    @include xs{
+                        display: none;
+                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.7rem;
+                    padding: 0.5rem;
+                    border-radius: 8px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+                &__wrapp{
+                    display: none; 
+                    @include xs{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 0.7rem;
+                        padding: 0.5rem;
+                        border-radius: 8px;
+                        background-color: rgba(255, 255, 255, 0.1);
+                    }
+                }
+                &__wrapper{
+                    span{
+                        @include center-items();
+                    }
+                    @include xs{
+                        gap: 0.7rem;
+                        padding: 0.7rem;
+                        border-radius: 8px;   
+                    }
+                    span{
+                        @include xs{
+                            display: none;
+                        }
+                    }
+                    h3{
+                        @include xs{
+                            display: none;
+                        }
+                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.7rem;
+                    padding: 0.5rem;
+                    border-radius: 8px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+    }
+}
